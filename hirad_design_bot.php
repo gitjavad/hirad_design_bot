@@ -57,8 +57,8 @@ if(isset($update->callback_query)){
     $tried = $update->callback_query->data+1;
 
     $username=$update->callback_query->from->username;
-    $code=$update->document->file_name;
-echo $code;
+    $code=json_encode($update);
+
     var_dump(
         makeHTTPRequest('editMessageText',[
             'chat_id'=>'@hirad_design_test',
