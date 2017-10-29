@@ -55,7 +55,8 @@ if(isset($update->callback_query)){
     $chat_id = $update->callback_query->message->chat->id;
     $message_id = $update->callback_query->message->message_id;
     $tried = $update->callback_query->data+1;
-    $user=$update->callback_query->message->document->file_name;
+    $code=$update->callback_query->message->document->file_name;
+    $username=$update->callback_query->from->username;
     var_dump(
         makeHTTPRequest('editMessageText',[
             'chat_id'=>'@hirad_design_test',
@@ -87,3 +88,26 @@ if(isset($update->callback_query)){
 }
 
 file_put_contents('log',ob_get_clean());
+//--------database
+$hostname="localhost";
+$user = "hirad_admin15023";
+$pass= "9133647736!@#";
+$mysql_database = "hirad-co_com_site";
+// Create connection
+$conn = new mysqli($hostname, $user, $pass, $mysql_database);
+mysqli_set_charset($conn,'utf8');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO bot (code, username, count) VALUES ('".$code."','".$username."','".$tried."')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+//---------------end databse
