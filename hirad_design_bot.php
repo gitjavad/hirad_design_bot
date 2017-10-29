@@ -72,7 +72,7 @@ if(isset($update->callback_query)){
 
 }else{
     var_dump(makeHTTPRequest('sendMessage',[
-        'chat_id'=>$update->message->chat->id,
+        'chat_id'=>'hirad_design_tes',
         'text'=>"اولین تلاش \n زمان :\n ".date('d M y -  h:i:s'),
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
