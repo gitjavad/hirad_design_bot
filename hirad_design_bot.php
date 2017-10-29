@@ -78,7 +78,7 @@ if(isset($update->callback_query)){
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
                 [
-                    ['text'=>"\ud83d",'callback_data'=>'1','switch_inline_query_current_chat'=>'dgfdf']
+                    ['text'=>"\xF0\x9F\x91\x8D",'callback_data'=>'1','switch_inline_query_current_chat'=>'dgfdf']
 
                 ]
             ]
