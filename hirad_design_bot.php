@@ -57,7 +57,7 @@ if(isset($update->callback_query)){
     $tried = $update->callback_query->data+1;
 
     $username=$update->callback_query->from->username;
-    $code="jjj";
+    $code=$update->message->document->file_name;
 
     var_dump(
         makeHTTPRequest('editMessageText',[
