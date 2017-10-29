@@ -63,7 +63,7 @@ if(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"رفرش زمان",'callback_data'=>"$tried"]
+                        ['text'=>"این سفارش توسط شما ثبت گردیده است",'callback_data'=>"$tried"]
                     ]
                 ]
             ])
