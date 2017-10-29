@@ -47,7 +47,7 @@ function makeHTTPRequest($method,$datas=[]){
 $update = json_decode(file_get_contents('php://input'));
 
 if(isset($update->callback_query)){
-    $callbackMessage = 'آپدیت شد';
+    $callbackMessage = 'سفارش شما ثبت گردید';
     var_dump(makeHTTPRequest('answerCallbackQuery',[
         'callback_query_id'=>$update->callback_query->id,
         'text'=>$callbackMessage
@@ -77,7 +77,7 @@ if(isset($update->callback_query)){
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
                 [
-                    ['text'=>"رفرش زمان",'callback_data'=>'1']
+                    ['text'=>"سفارش محصول",'callback_data'=>'1']
                 ]
             ]
         ])
