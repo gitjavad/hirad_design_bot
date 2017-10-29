@@ -57,8 +57,8 @@ if(isset($update->callback_query)){
     $tried = $update->callback_query->data+1;
 
     $username=$update->callback_query->from->username;
-    $photo_array = $update->callback_query->message->document->file_name;
-    $code= file_id($photo_array);
+    $code=$update->callback_query->message->photo[0]->file_id;
+
     var_dump(
         makeHTTPRequest('editMessageText',[
             'chat_id'=>'@hirad_design_test',
@@ -91,13 +91,7 @@ if(isset($update->callback_query)){
 
 
 file_put_contents('log',ob_get_clean());
-function file_id($file_array){
-    $json_array = json_encode($file_array);
-    $json_array=json_decode($json_array,true);
-    $file_id =$json_array[0]['file_id'];
-    return $file_id;
 
-}
 //--------database
 $hostname="localhost";
 $user = "hirad_admin15023";
