@@ -78,7 +78,8 @@ if(isset($update->callback_query)){
         'reply_markup'=>json_encode([
             'inline_keyboard'=>[
                 [
-                    ['text'=>"ثبت سفارش",'callback_data'=>'1']
+                    ['text'=>"ثبت سفارش",'callback_data'=>'1','switch_inline_query_current_chat'=>'']
+
                 ]
             ]
         ])
