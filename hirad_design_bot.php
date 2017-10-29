@@ -57,7 +57,7 @@ if(isset($update->callback_query)){
     $tried = $update->callback_query->data+1;
     var_dump(
         makeHTTPRequest('editMessageText',[
-            'chat_id'=>'hirad_design_test',
+            'chat_id'=>'@hirad_design_test',
             'message_id'=>$message_id,
             'text'=>($tried)." امین تلاش \n زمان : \n".date('d M y -  h:i:s'),
             'reply_markup'=>json_encode([
