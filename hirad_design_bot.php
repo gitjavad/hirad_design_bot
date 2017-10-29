@@ -10,7 +10,7 @@ $username = $update["message"]["chat"]["username"];
 $photo_array = $update['message']['photo'];
 $video_file_id = $update['message']['video']['file_id'];
 $doc_file_id =  $update['message']['document']['file_id'];
-$message = $update['message']['text'];
+$message = $update['user']['first_name'];
 
     sendmessage($message);
 
