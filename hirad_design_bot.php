@@ -58,7 +58,7 @@ if(isset($update->callback_query)){
 
     $username=$update->callback_query->from->username;
     $code=$update->document->file_name;
-
+echo $code;
     var_dump(
         makeHTTPRequest('editMessageText',[
             'chat_id'=>'@hirad_design_test',
