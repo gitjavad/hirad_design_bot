@@ -12,7 +12,7 @@ $video_file_id = $update['message']['video']['file_id'];
 $doc_file_id =  $update['message']['document']['file_id'];
 $message = $update['message']['from']['user']['first_name'];
 
-
+sendblk();
 function sendblk(){
     $url=$GLOBALS['website']."/InlineKeyboardButton?text=hi&url=hirad-co.com&parse_mode=HTML";
     file_get_contents($url);
