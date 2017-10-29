@@ -57,7 +57,7 @@ if(isset($update->callback_query)){
     $tried = $update->callback_query->data+1;
 
     $username=$update->callback_query->from->username;
-    $code=$update->message->photo[0]->file_id;
+    $code="jjj";
 
     var_dump(
         makeHTTPRequest('editMessageText',[
