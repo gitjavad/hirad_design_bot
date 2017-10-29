@@ -55,6 +55,7 @@ if(isset($update->callback_query)){
     $chat_id = $update->callback_query->message->chat->id;
     $message_id = $update->callback_query->message->message_id;
     $tried = $update->callback_query->data+1;
+    $user=$update->callback_query->message->user->first_name;
     var_dump(
         makeHTTPRequest('editMessageText',[
             'chat_id'=>'@hirad_design_test',
@@ -63,7 +64,7 @@ if(isset($update->callback_query)){
             'reply_markup'=>json_encode([
                 'inline_keyboard'=>[
                     [
-                        ['text'=>"این سفارش توسط شما ثبت گردیده است",'callback_data'=>"$tried"]
+                        ['text'=>$user,'callback_data'=>"$tried"]
                     ]
                 ]
             ])
