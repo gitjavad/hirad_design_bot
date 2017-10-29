@@ -12,6 +12,6 @@ $video_file_id = $update['message']['video']['file_id'];
 $doc_file_id =  $update['message']['document']['file_id'];
 $message = $update['message']['text'];
 function sendmessage($message){
-    $url=$GLOBALS['website']."/sendMessage?chat_id=@btstest&text=".$message."&parse_mode=HTML";
+    $url=$GLOBALS['website']."/sendMessage?chat_id=@hirad_design_test&text=".$message."&parse_mode=HTML";
     file_get_contents($url);
 }
